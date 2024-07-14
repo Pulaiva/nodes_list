@@ -7,7 +7,8 @@
 
 import Foundation
 
-public struct NodeModel: Codable {
+public struct NodeModel: Codable, Identifiable {
+    public var id: UUID = UUID()
     var publicKey: String?
     var nodeAlias: String?
     var channels: Int?
