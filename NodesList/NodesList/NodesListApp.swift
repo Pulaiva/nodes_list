@@ -11,7 +11,7 @@ import SwiftUI
 struct NodesListApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NodesListView()
         }
     }
 }

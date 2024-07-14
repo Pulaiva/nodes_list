@@ -12,4 +12,8 @@ public enum ViewState {
     case loading
     case success
     case failure
+    
+    var isFailure: Bool {
+        self == .failure
+    }
 }

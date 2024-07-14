@@ -24,6 +24,7 @@
 		3257C4AC2C44423A00FF44FC /* NodesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3257C4AB2C44423A00FF44FC /* NodesListViewModel.swift */; };
 		3257C4AE2C44439400FF44FC /* NodesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3257C4AD2C44439400FF44FC /* NodesListView.swift */; };
 		3257C4B02C444AF200FF44FC /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3257C4AF2C444AF200FF44FC /* ViewState.swift */; };
+		3257C4B22C445C9500FF44FC /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3257C4B12C445C9500FF44FC /* LoaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		3257C4AB2C44423A00FF44FC /* NodesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodesListViewModel.swift; sourceTree = "<group>"; };
 		3257C4AD2C44439400FF44FC /* NodesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodesListView.swift; sourceTree = "<group>"; };
 		3257C4AF2C444AF200FF44FC /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
+		3257C4B12C445C9500FF44FC /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 				3257C4AA2C44421A00FF44FC /* NodesList */,
 				3257C49D2C442BCB00FF44FC /* NodeListItemView.swift */,
 				3257C4A42C44380400FF44FC /* HeaderAndBodyView.swift */,
+				3257C4B12C445C9500FF44FC /* LoaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3257C46F2C44250800FF44FC /* ContentView.swift in Sources */,
+				3257C4B22C445C9500FF44FC /* LoaderView.swift in Sources */,
 				3257C4AE2C44439400FF44FC /* NodesListView.swift in Sources */,
 				3257C4B02C444AF200FF44FC /* ViewState.swift in Sources */,
 				3257C4A72C443CFB00FF44FC /* DateExtension.swift in Sources */,

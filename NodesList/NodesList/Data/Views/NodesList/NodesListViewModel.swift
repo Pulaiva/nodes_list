@@ -20,13 +20,15 @@ extension NodesListView {
         private var cancellables: Set<AnyCancellable> = []
         
         func getNodes() {
+            
             viewState = .loading
             
             // TODO: - Get nodes from a datasource...
             nodes = [NodeModel(publicKey: "Public Key 1", nodeAlias: "Node Alias 1", channels: 1234, capacity: 1234, firstSeen: Date(), updatedAt: Date(), city: "City", country: NodeCountry(en: "Brazil", ptBR: "Brasil")),
                      NodeModel(publicKey: "Public Key 2", nodeAlias: "Node Alias 2", channels: 4321, capacity: 4321, firstSeen: Date(), updatedAt: Date(), city: "City", country: NodeCountry(en: "Brazil", ptBR: "Brasil")),]
             
-            viewState = .success
+            viewState = .failure
+            
         }
     }
 }
