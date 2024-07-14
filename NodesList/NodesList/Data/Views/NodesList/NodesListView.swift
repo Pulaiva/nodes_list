@@ -30,7 +30,7 @@ struct NodesListView: View {
                             capacity: node.capacity?.toString,
                             firstSeen: node.firstSeen?.toString(),
                             updatedAt: node.updatedAt?.toString(),
-                            city: node.city,
+                            city: node.city?.ptBR ?? node.city?.en,
                             country: node.country?.ptBR ?? node.country?.en
                         )
                     }

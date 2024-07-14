@@ -11,24 +11,27 @@ import Combine
 extension NodesListView {
     
     class ViewModel: ObservableObject {
-        @Published var nodes: [NodeModel] = [NodeModel(publicKey: "Public Key 1", nodeAlias: "Node Alias 1", channels: 1234, capacity: 1234, firstSeen: Date(), updatedAt: Date(), city: "City", country: NodeCountry(en: "Brazil", ptBR: "Brasil")),
-                                             NodeModel(publicKey: "Public Key 2", nodeAlias: "Node Alias 2", channels: 4321, capacity: 4321, firstSeen: Date(), updatedAt: Date(), city: "City", country: NodeCountry(en: "Brazil", ptBR: "Brasil")),]
+        @Published var nodes: [NodeModel] = []
                                     
         @Published var viewState: ViewState = .initial
         @Published var errorMessage: String? = nil
         
+        private var datasource = NodesRemoteDatasource()
         private var cancellables: Set<AnyCancellable> = []
         
         func getNodes() {
-            
             viewState = .loading
             
-            // TODO: - Get nodes from a datasource...
-            nodes = [NodeModel(publicKey: "Public Key 1", nodeAlias: "Node Alias 1", channels: 1234, capacity: 1234, firstSeen: Date(), updatedAt: Date(), city: "City", country: NodeCountry(en: "Brazil", ptBR: "Brasil")),
-                     NodeModel(publicKey: "Public Key 2", nodeAlias: "Node Alias 2", channels: 4321, capacity: 4321, firstSeen: Date(), updatedAt: Date(), city: "City", country: NodeCountry(en: "Brazil", ptBR: "Brasil")),]
-            
-            viewState = .failure
-            
+            datasource.getNodes(
+                onSuccess: { [weak self] nodes in
+                    self?.nodes = nodes ?? []
+                    self?.viewState = .success
+                },
+                onError: { [weak self] error in
+                    guard let self = self else { return }
+                    self.errorMessage = error.localizedDescription
+                    self.viewState = .failure
+                })
         }
     }
 }

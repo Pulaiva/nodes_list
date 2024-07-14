@@ -15,8 +15,8 @@ public struct NodeModel: Codable, Identifiable {
     var capacity: Int?
     var firstSeen: Date?
     var updatedAt: Date?
-    var city: String?
-    var country: NodeCountry?
+    var city: NodeCityCountry?
+    var country: NodeCityCountry?
     
     private enum CodingKeys: String, CodingKey {
         case publicKey
@@ -30,7 +30,7 @@ public struct NodeModel: Codable, Identifiable {
     }
 }
 
-public struct NodeCountry: Codable {
+public struct NodeCityCountry: Codable {
     
     var de: String?
     var en: String?
