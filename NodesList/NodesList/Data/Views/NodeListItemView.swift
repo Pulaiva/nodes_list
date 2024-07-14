@@ -8,42 +8,35 @@
 import SwiftUI
 
 struct NodeListItemView: View {
-  let node: NodeModel
+    var publicKey: String?
+    var nodeAlias: String?
+    var channels: String?
+    var capacity: String?
+    var firstSeen: String?
+    var updatedAt: String?
+    var city: String?
+    var country: String?
 
   var body: some View {
-    
-      // TODO - Show
-      // publicKey
-      // alias
-      // channels
-      // capacity
-      // firstSeen
-      // updatedAt
-      // city
-      // country
-      
-      HStack {
-          VStack {
-              Text("Chave Pública:")
-                  .font(.headline)
-                  .bold()
-                  .lineLimit(1)
-              Text(node.publicKey ?? "Indisponível")
-                  .font(.headline)
-                  .lineLimit(1)
-          }.padding(.vertical, 2)
-          
-          VStack {
-              Text("Nome:")
-                  .font(.headline)
-                  .bold()
-                  .lineLimit(1)
-              Text(node.nodeAlias ?? "Indisponível")
-                  .font(.headline)
-                  .lineLimit(1)
-          }.padding(.vertical, 2)
+      VStack(spacing: 16) {
+          HStack(spacing: 40) {
+              HeaderAndBodyView(headerText: "Chave Pública:", bodyText: publicKey)
+              HeaderAndBodyView(headerText: "Nome:", bodyText: nodeAlias)
+              HeaderAndBodyView(headerText: "Quantidade de Canais:", bodyText: channels)
+          }
+          HStack(spacing: 40) {
+              HeaderAndBodyView(headerText: "Quantidade de Bitcoin:", bodyText: capacity)
+              HeaderAndBodyView(headerText: "Se tornou público em:", bodyText: firstSeen)
+              HeaderAndBodyView(headerText: "Atualizado em:", bodyText: updatedAt)
+          }
+          HStack(spacing: 40) {
+              HeaderAndBodyView(headerText: "Cidade:", bodyText: city)
+              HeaderAndBodyView(headerText: "País:", bodyText: country)
+          }
       }
-      .padding(.horizontal, 8)
-    
   }
+}
+
+#Preview {
+    NodeListItemView(publicKey: "123", nodeAlias: "Nome", channels: "12352", capacity: "1234567", firstSeen: "14/07/2024", updatedAt: "14/07/2024", city: "São Paulo", country:  "Vancôver")
 }
