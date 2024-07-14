@@ -15,7 +15,7 @@ final class LosslessStringConvertibleTests: XCTestCase {
     
     func testFormatOptionalIntToString() {
         // 1 - Arrange
-        var inputInt: Int? = 123
+        let inputInt: Int? = 123
         var outputString: String? = ""
         
         // 2 - Act
@@ -27,7 +27,7 @@ final class LosslessStringConvertibleTests: XCTestCase {
     
     func testFormatOptionalNilToString() {
         // 1 - Arrange
-        var inputInt: Int? = nil
+        let inputInt: Int? = nil
         var outputString: String? = ""
         
         // 2 - Act
@@ -39,7 +39,7 @@ final class LosslessStringConvertibleTests: XCTestCase {
     
     func testFormatNegativeIntToString() {
         // 1 - Arrange
-        var inputInt: Int = -123
+        let inputInt: Int = -123
         var outputString: String? = ""
         
         // 2 - Act
